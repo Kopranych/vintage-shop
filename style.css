@@ -38,3 +38,20 @@ footer {
 .panel-custom:hover {
 	box-shadow: 7px 7px 5px rgba(0,0,0,0.6);
 }
+.img-icon-inst:hover {
+	filter: alpha(Opacity=75); /* Полупрозрачность для IE */
+    opacity: 0.75;
+}
+.img-icon-inst {
+	/*background-image: url("/img/icon/iconfinder_instagram.svg");*/
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;	
+}
+.icon {
+	display: flex;
+	justify-content: center;
+}
+.card {
+	margin-top: 18px;
+}
