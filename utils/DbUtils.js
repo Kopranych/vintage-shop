@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 import '../models/product';
 
-const Product = mongoose.model('product');
+const Product = mongoose.model('Product');
 
 export function setUpConnection(){
 	mongoose.connect(`mongodb://localhost/product`);
@@ -18,9 +18,9 @@ export function createProduct(data){
 		comment: data.comment,
 		type: data.type,
 		number: data.number,
-		createDate: data.createDate,
+		createDate: new Date,
 		imgPath: data.imgPath,	
-	})
+	});
 	return product.save();
 };
 
