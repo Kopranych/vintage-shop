@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
+import { db } from '../config/config'
 import '../models/product';
 
 const Product = mongoose.model('Product');
 
 export function setUpConnection(){
-	mongoose.connect(`mongodb://localhost/product`);
+	mongoose.connect(`mongodb://${db.host}:${db.port}/${db.name}`);
 }
 
 export function listProduct(){
@@ -33,9 +34,9 @@ export function updateProduct(data){
 		number: data.number,
 		createDate: data.createDate,
 		imgPath: data.imgPath,	
-	})
+	});
 	return product.save();
-};
+}
 
 export function deleteProduct(id){
 	Product.findById(id).remove();
