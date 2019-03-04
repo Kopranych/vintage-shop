@@ -1,0 +1,14 @@
+.img-icon-inst {
+	/*background-image: url("/img/icon/iconfinder_instagram.svg");*/
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;	
+}
+.img-icon-inst:hover {
+	filter: alpha(Opacity=75); /* Полупрозрачность для IE */
+	opacity: 0.75;
+}
+.icon {
+	display: flex;
+	justify-content: center;
+}
