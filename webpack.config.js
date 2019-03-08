@@ -41,9 +41,13 @@ module.exports = {
                 loader: "url-loader?limit=26000&mimetype=image/svg+xml"
             },
             {
-                test: /\.jsx$/,
-                loader: "react-hot!babel",
-                exclude: [/node_modules/, /public/]
+                test: /\.jsx?$/,         // Match both .js and .jsx files
+                exclude: /node_modules/,
+                loader: "babel",
+                query:
+                  {
+                      presets:['react']
+                  }
             },
             {
                 test: /\.json$/,
