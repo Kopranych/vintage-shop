@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
-import AdminContent from "./AdminContent.jsx";
+import AdminForm from "./AdminForm.jsx";
+import AdminSearch from "./AdminSearch.jsx";
 
 class AdminPage extends Component {
     render() {
@@ -12,7 +13,8 @@ class AdminPage extends Component {
                 <Link to="/">
                     Главная страница
                 </Link>
-                <AdminContent/>
+                <AdminForm/>
+                <AdminSearch/>
                 <Footer/>
             </div>
         );
