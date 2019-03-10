@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {ApiPrefix} from "../../../server/config/config";
+const axios = require('axios');
 
 class AdminForm extends Component {
 
@@ -28,7 +30,27 @@ class AdminForm extends Component {
   }
 
   sendProduct() {
-
+    const { title, type, number, comment } = this.state;
+    axios.post(`${ApiPrefix}/product`, {
+      title: title,
+      type: type,
+      number: number,
+      comment: comment
+    })
+      .then(response => {
+        // handle success
+        console.log('RESPONSE ', response);
+        this.setState({
+          title: "",
+          type: "",
+          number: null,
+          comment: ""
+        })
+      })
+      .catch(error => {
+        // handle error
+        console.log('Error ', error);
+      });
   }
 
   render() {
@@ -53,7 +75,7 @@ class AdminForm extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Количество</label>
-            <input name="number" type="email" className="form-control" id="exampleInputEmail1"
+            <input name="number" type="number" className="form-control" id="exampleInputEmail1"
                    aria-describedby="emailHelp" placeholder="2"
                    value={this.state.number}
                    onChange={this.handleChange}/>
