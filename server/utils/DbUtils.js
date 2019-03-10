@@ -39,7 +39,7 @@ export function updateProduct(data){
 }
 
 export function deleteProduct(id){
-	Product.findById(id).remove();
+	return Product.findById(id).remove();
 }
 
 export function findById(id){

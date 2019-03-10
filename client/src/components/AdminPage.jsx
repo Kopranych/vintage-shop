@@ -10,7 +10,7 @@ class AdminPage extends Component {
     return (
       <div>
         <Header/>
-        <Link to="/">
+        <Link to="/admin">
           Главная страница
         </Link>
         <div className="container">

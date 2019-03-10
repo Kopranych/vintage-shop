@@ -28,7 +28,7 @@ app.post('/product', (req, res) => {
 });
 
 app.delete('/product/:id', (req, res) => {
-  db.deleteProduct(req.param.id).then(data => res.send(data));
+  db.deleteProduct(req.params.id).then(data => res.send(data));
 });
 
 app.put('/product/:id', (req, res) => {
