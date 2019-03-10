@@ -1,5 +1,6 @@
 import * as db from './utils/DbUtils.js';
 import {serverPort} from './config/config.json';
+import cors from 'cors';
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -9,6 +10,7 @@ db.setUpConnection();
 
 app.use(bodyParser.urlencoded({extend: true}));
 app.use(bodyParser.json());
+app.use(cors({origin: '*'})); // ui and backend different port
 
 app.get('/', (req, res) => {
 });
