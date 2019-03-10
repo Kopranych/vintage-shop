@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {ApiPrefix} from '../../../server/config/config';
 import {Button} from "reactstrap";
+import CardProduct from './CardProduct.jsx'
 
 const axios = require('axios');
 
@@ -8,6 +9,7 @@ class AdminSearch extends Component {
   constructor(props) {
     super(props);
     this.getProducts = this.getProducts.bind(this);
+    this.clearProduct = this.clearProduct.bind(this);
     this.state = {
       isProducts: false,
       products: []
@@ -16,16 +18,24 @@ class AdminSearch extends Component {
 
   render() {
     console.log('STATE ', this.state);
-    const item = this.state.products.map(product => <div>{product.title}</div>);
+    const item = this.state.products.map(product => <CardProduct product={product}/>);
     return <div>
       <div>
         {item}
       </div>
-      <Button
-        onClick={this.getProducts}
-      >
-        Показать список товаров
-      </Button>
+      <div className="row">
+        <Button
+          onClick={this.getProducts}
+          className="mr-1"
+        >
+          Показать список товаров
+        </Button>
+        <Button
+          onClick={this.clearProduct}
+        >
+          Очистить список
+        </Button>
+      </div>
     </div>
   }
 
@@ -43,6 +53,12 @@ class AdminSearch extends Component {
         // handle error
         console.log('Error ', error);
       });
+  }
+
+  clearProduct() {
+    this.setState(({
+      products: []
+    }))
   }
 }
 
