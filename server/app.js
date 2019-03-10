@@ -20,7 +20,7 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/product/:id', (req, res) => {
-  db.findById(req.param.id).then(data => res.send(data));
+  db.findById(req.params.id).then(data => res.send(data));
 });
 
 app.post('/product', (req, res) => {
