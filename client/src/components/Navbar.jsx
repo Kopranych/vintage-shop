@@ -12,7 +12,7 @@ class Navbar extends Component {
                         <li><a href="#">Магазин</a></li>
                     </ul>
                     <ul className="nav navbar-nav navbar-right">
-                        <li><Link to="/admin"><span className="glyphicon glyphicon-user"></span>Страница администратора</Link></li>
+                        <li><Link to="/"><span className="glyphicon glyphicon-user"></span>Страница администратора</Link></li>
                         <li><a href="#"><span className="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
                     </ul>
                 </div>

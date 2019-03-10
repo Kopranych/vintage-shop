@@ -18,6 +18,9 @@ class CardProduct extends Component {
       <div>
         {product.comment}
       </div>
+      <div>
+        {product.createDate}
+      </div>
     </div>
   }
 }
