@@ -8,17 +8,17 @@ import AdminPage from "./AdminPage.jsx";
 
 class App extends Component {
 
-    render() {
-        return (
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/" component={MainPage}/>
-                    <Route exact path="/admin" component={AdminPage}/>
-                    <Redirect to="/"/>
-                </Switch>
-            </BrowserRouter>
-        );
-    }
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/admin" component={MainPage}/>
+          <Route exact path="/" component={AdminPage}/>
+          <Redirect to="/"/>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 
 }
 

@@ -6,19 +6,27 @@ import AdminForm from "./AdminForm.jsx";
 import AdminSearch from "./AdminSearch.jsx";
 
 class AdminPage extends Component {
-    render() {
-        return (
-            <div>
-                <Header/>
-                <Link to="/">
-                    Главная страница
-                </Link>
-                <AdminForm/>
-                <AdminSearch/>
-                <Footer/>
+  render() {
+    return (
+      <div>
+        <Header/>
+        <Link to="/">
+          Главная страница
+        </Link>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <AdminForm/>
             </div>
-        );
-    }
+            <div className="col">
+              <AdminSearch/>
+            </div>
+          </div>
+        </div>
+        <Footer/>
+      </div>
+    );
+  }
 }
 
 export default AdminPage;

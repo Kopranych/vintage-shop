@@ -1,28 +1,45 @@
 import React, {Component} from 'react'
 import {ApiPrefix} from '../../../server/config/config';
+import {Button} from "reactstrap";
 
 const axios = require('axios');
 
 class AdminSearch extends Component {
   constructor(props) {
     super(props);
-    this.get = this.get.bind(this.get);
+    this.getProducts = this.getProducts.bind(this);
+    this.state = {
+      isProducts: false,
+      products: []
+    }
   }
 
   render() {
-    this.get();
+    console.log('STATE ', this.state);
+    const item = this.state.products.map(product => <div>{product.title}</div>);
     return <div>
-      hello
+      <div>
+        {item}
+      </div>
+      <Button
+        onClick={this.getProducts}
+      >
+        Показать список товаров
+      </Button>
     </div>
   }
 
-  get() {
+  getProducts() {
     axios.get(`${ApiPrefix}/products`)
-      .then(function (response) {
+      .then(response => {
         // handle success
         console.log(response);
+        const products = response.data;
+        this.setState(({
+          products: products
+        }))
       })
-      .catch(function (error) {
+      .catch(error => {
         // handle error
         console.log('Error ', error);
       });

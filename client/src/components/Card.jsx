@@ -9,7 +9,7 @@ class Card extends Component {
             <div className="panel-custom">
                 <div className="panel-body panel-body-custom">
                     <img src={path}
-                         className="img-responsive img-custom img-card"
+                         className="card-img-top img-custom img-card"
                          alt="Image"/>
                 </div>
                 <div className="panel-footer panel-footer-custom">{title}</div>
