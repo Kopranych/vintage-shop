@@ -32,7 +32,7 @@ app.delete('/product/:id', (req, res) => {
 });
 
 app.put('/product/:id', (req, res) => {
-  db.updateProduct(req.data)
+  db.updateProduct(req.body)
 });
 
 app.get('/admin', (req, res) => {

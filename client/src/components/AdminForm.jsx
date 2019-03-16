@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {ApiPrefix} from "../../../server/config/config";
+
 const axios = require('axios');
 
 class AdminForm extends Component {
@@ -26,7 +27,6 @@ class AdminForm extends Component {
     this.setState({
       [name]: value
     });
-
   }
 
   sendProduct() {
@@ -88,12 +88,6 @@ class AdminForm extends Component {
           </div>
           <button type="button" className="btn btn-primary" onClick={this.sendProduct}>Добавить</button>
         </form>
-      </div>
-      <div className="row">
-
-      </div>
-      <div className="row">
-
       </div>
     </div>
   }
